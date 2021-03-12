@@ -4,8 +4,8 @@ services:
   web:
     build: ./web
     environment: 
-      - APACHE_RUN_USER=www-data
-    volumes: 
+      - APACHE_RUN_USER=#1000
+    volumes:
       - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
     ports: 
       - 8080:80
@@ -33,3 +33,4 @@ services:
       - ${APP_PATH_HOST}:${APP_PATH_CONTAINER}
     working_dir: ${APP_PATH_CONTAINER}
     command: composer install
+
